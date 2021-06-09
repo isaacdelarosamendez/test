@@ -1,0 +1,64 @@
+.circular {
+  width: 25%;
+  max-width: 350px;
+  margin-right: 100px;
+  @media (max-width: 1080px) {
+    width: 100%;
+    margin-right: 2px;
+    margin-bottom: 50px;
+  }
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid #9e9e9e;
+    &-perc {
+      margin-right: 15px;
+      font-weight: 700;
+      color: #757575;
+    }
+    &-amount {
+      color: #424242;
+    }
+    &-tablet {
+      width: 50%;
+    }
+    &-smartphone {
+      width: 50%;
+    }
+  }
+}
+
+.chartContainer {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  width: 360px;
+}
+.chartInner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 19%;
+  right: 20%;
+  bottom: 20%;
+  left: 15%;
+  padding: 1.25em 0;
+  line-height: 120%;
+  z-index: -1; /* Allow tooltips on top */
+  overflow: hidden;
+}
+.chartStatus {
+  font-weight: bold;
+  font-size: 25px;
+  color: #bdbdbd ;
+}
+.chartValue {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 50px;
+  color: #757575 ;
+}

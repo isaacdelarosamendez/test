@@ -1,0 +1,41 @@
+[
+    {
+        "name": "REVENUE",
+        "amount": 200000,
+        "isMoney":true,
+        "tablets":{
+            "amount":120000.000,
+            "color":"#43a047"
+        },
+        "smartphones":{
+            "amount":80000.000,
+            "color":"#1b5e20"
+        }
+    },
+    {
+        "name": "IMPRESIONS",
+        "amount": 50000,
+        "isMoney":false,
+        "tablets":{
+            "amount":20000.000,
+            "color":"#039be5"
+        },
+        "smartphones":{
+            "amount":30000.000,
+            "color":"#01579b"
+        }
+    },
+    {
+        "name": "VISITS",
+        "amount": 600000,
+        "isMoney":false,
+        "tablets":{
+            "amount":480000.000,
+            "color":"#ffeb3b"
+        },
+        "smartphones":{
+            "amount":120000.000,
+            "color":"#f57f17"
+        }
+    }
+]
