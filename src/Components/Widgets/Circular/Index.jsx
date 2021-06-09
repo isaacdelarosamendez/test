@@ -1,5 +1,4 @@
 import "./Index.scss";
-import { PieChart } from "react-minimal-pie-chart";
 import { Doughnut } from "react-chartjs-2";
 const Index = ({ element }) => {
   const calculatePerc = (currentValue, total, isMoney) => {
@@ -33,12 +32,12 @@ const Index = ({ element }) => {
     element.amount,
     element.isMoney
   );
-  const data = {
+  const dataChart = {
     datasets: [
       {
-        data: [percTablets, percSmartphones],
-        backgroundColor: [element.tablets.color, element.smartphones.color],
-        labels: ["Tablets", "Smartphones"],
+        data: [percSmartphones, percTablets],
+        backgroundColor: [element.smartphones.color, element.tablets.color],
+        labels: ["Smartphones", "Tablets"],
         labelSuffix: "%",
         pointStyle: "circle",
       },
@@ -48,7 +47,12 @@ const Index = ({ element }) => {
     <div className="circular">
       <div className="circular-chart">
         <div className="chartContainer">
-          <Doughnut data={data} options={options} height={420} width={420} />
+          <Doughnut
+            data={dataChart}
+            options={options}
+            height={420}
+            width={420}
+          />
           <div className="chartInner">
             <div className="chartStatus">{element.name}</div>
             <div className="chartValue">

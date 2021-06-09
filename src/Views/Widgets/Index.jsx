@@ -5,8 +5,8 @@ function Home() {
   const infoAnalytics = getData();
 
   const renderData = () => {
-    let result = infoAnalytics.map((info,index) => (
-      <WidgetCircular key={index}  element={info} />
+    let result = infoAnalytics.map((info, index) => (
+      <WidgetCircular key={index} element={info} />
     ));
     return result;
   };
