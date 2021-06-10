@@ -1,0 +1,17 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 33%;
+  padding-right: 33%;
+  @media (max-width: 500px) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  &-name {
+      margin-bottom: 20px;
+  }
+  &-save-button {
+    float: right;
+  }
+}

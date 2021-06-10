@@ -1,21 +1,10 @@
 import "./Index.scss";
 import { Doughnut } from "react-chartjs-2";
+import {
+  calculateAmount,
+  calculatePerc,
+} from "../../../Controllers/Widgets/Index";
 const Index = ({ element }) => {
-  const calculatePerc = (currentValue, total, isMoney) => {
-    const value = (currentValue / total) * 100;
-    return value;
-  };
-
-  const calculateAmount = (currentValue, isMoney) => {
-    if (isMoney) {
-      return new Intl.NumberFormat("es-MX").format(currentValue) + " Є";
-    } else {
-      return currentValue
-        .toFixed(3)
-        .toString()
-        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-    }
-  };
   const options = {
     cutoutPercentage: 90,
     tooltips: {

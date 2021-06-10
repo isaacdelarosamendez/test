@@ -1,8 +1,8 @@
 import "./Index.scss";
-import { getData } from "../../Models/Core/Widgets";
+import { getDataWidgets } from "../../Controllers/Widgets/Index";
 import WidgetCircular from "../../Components/Widgets/Circular/Index";
-function Home() {
-  const infoAnalytics = getData();
+function Index() {
+  const infoAnalytics = getDataWidgets();
 
   const renderData = () => {
     let result = infoAnalytics.map((info, index) => (
@@ -11,7 +11,7 @@ function Home() {
     return result;
   };
 
-  return <div className="home">{renderData()}</div>;
+  return <div className="widgets">{renderData()}</div>;
 }
 
-export default Home;
+export default Index;

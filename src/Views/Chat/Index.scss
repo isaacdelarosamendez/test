@@ -1,0 +1,17 @@
+.chat {
+  padding: 10px;
+  height: 40px;
+  border-bottom: 2px solid #9e9e9e;
+  &-header{
+    &-navigate{
+      float: right;
+    }
+    &-title{
+      margin-top: 10px;
+      float:left;
+    }
+  }
+  &-main{
+      margin-top: 70px;
+  }
+}
