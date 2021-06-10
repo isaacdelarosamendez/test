@@ -6,6 +6,9 @@ import { getCurrentUser } from "../../Controllers/Chat/Profile";
 function Index() {
   const history = useHistory();
   const user = getCurrentUser();
+  if (user.id === 0) {
+    history.push(`/chat-profile`);
+  }
   return (
     <div className="chat">
       <div className="chat-header">

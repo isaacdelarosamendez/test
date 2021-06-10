@@ -1,13 +1,21 @@
 import "./Index.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { setUser } from "../../../Controllers/Chat/Profile";
+import { setUser, getCurrentUser } from "../../../Controllers/Chat/Profile";
 function Index() {
   const history = useHistory();
   const [name, setName] = useState("");
 
+  const user = getCurrentUser();
+  useEffect(() => {
+    (async () => {
+      if (user.id > 0) {
+        setName(user.name);
+      }
+    })();
+  }, [user]);
   const saveProfile = async () => {
     if (name === "") {
       alert("Enter your name");
@@ -15,6 +23,7 @@ function Index() {
     }
     const userSave = {
       name: name,
+      userId: user.id,
     };
     const result = await setUser(userSave);
     if (result === "") {
@@ -31,6 +40,7 @@ function Index() {
           id="outlined-basic"
           label="Enter your name"
           variant="outlined"
+          value={name}
           onChange={(event) => {
             setName(event.target.value);
           }}

@@ -1,0 +1,25 @@
+.messages {
+  &-element {
+    &-box {
+      border: 2px solid black;
+      padding: 10px;
+      width: 59%;
+      text-align: left;
+      @media (max-width: 700px) {
+        width: 70%;
+      }
+      &-right {
+        margin-left: 39%;
+        @media (max-width: 700px) {
+          margin-left: 24%;
+        }
+      }
+    }
+    &-right {
+      text-align: right;
+    }
+    &-left {
+      text-align: left;
+    }
+  }
+}

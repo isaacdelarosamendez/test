@@ -13,7 +13,7 @@ function App() {
             <Route exact path="/widgets" component={Widgets}></Route>
             <Route exact path="/chat" component={Chats}></Route>
             <Route exact path="/chat-profile" component={ChatProfile}></Route>
-            <Route exact path="/chat-room" component={ChatRoom}></Route>
+            <Route exact path="/chat-room/:id" component={ChatRoom}></Route>
           </Switch>
         </div>
       </Router>
