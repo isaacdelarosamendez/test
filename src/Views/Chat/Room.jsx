@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import ListChats from "../../Components/Chat/List/Index";
-import { getCurrentUser } from "../../Controllers/Chat/Profile";
 import SendIcon from "@material-ui/icons/Send";
 import socketIOClient from "socket.io-client";
 const ENDPOINT = "http://127.0.0.1:4001";
@@ -19,7 +17,6 @@ function Index() {
     });
   }, []);
   const history = useHistory();
-  const user = getCurrentUser();
   const [message, setMessage] = useState("");
   return (
     <div className="room">

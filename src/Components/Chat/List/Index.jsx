@@ -7,13 +7,29 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import { getUsersList } from "../../../Controllers/Chat/List";
+import React, { useState, useEffect } from "react";
+import { getCurrentUser } from "../../../Controllers/Chat/Profile";
 function Index() {
   const history = useHistory();
   const navigateRoom = (userId) => {
-    history.push(`/chat-room?u=${userId}`);
+    if (userId > 0) {
+      history.push(`/chat-room?u=${userId}`);
+    } else {
+      history.push(`/chat-profile`);
+    }
   };
+  const [userList, setUserList] = useState([]);
+  const user = getCurrentUser();
+
+  useEffect(() => {
+    (async () => {
+      const result = await getUsersList(user.id);
+      setUserList(result);
+    })();
+  }, [user.id]);
+
   const renderList = () => {
-    let result = getUsersList().map((user, index) => (
+    let result = userList?.map((user, index) => (
       <ListItem
         onClick={() => {
           navigateRoom(user.id);

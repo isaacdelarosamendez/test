@@ -7,7 +7,8 @@ import { setUser } from "../../../Controllers/Chat/Profile";
 function Index() {
   const history = useHistory();
   const [name, setName] = useState("");
-  const saveProfile = () => {
+
+  const saveProfile = async () => {
     if (name === "") {
       alert("Enter your name");
       return;
@@ -15,7 +16,7 @@ function Index() {
     const userSave = {
       name: name,
     };
-    const result = setUser(userSave);
+    const result = await setUser(userSave);
     if (result === "") {
       history.push(`/chat`);
     } else {
